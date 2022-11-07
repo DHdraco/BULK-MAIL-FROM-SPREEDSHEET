@@ -20,13 +20,21 @@ This google app script will use the most recent draft in Gmail as a template.
 
 
 ## Example Spreadsheet
+#sheet1
 
-First Name | Last Name | Designation | Email
----------- | ----------|-------------|-------
-Shantanu | Bharadwaj | SDE | xyz@gmail.com
-Shanu |Bharadwaj | SDE | abc@iitg.ernet.in
+Email | Name | SendOrNot 
+---------- | ----------|-------------
+abc@gmail.com | Dhanush | SENT_ALREADY  
+xyz@gmail.com |Bharadwaj |   
 
 > here you can add as many fields as you want.  
+#sheet2
+
+subject | link1 | link2 
+---------- | ----------|-------------
+xyz | https://... | (https://...)     
+
+> here just one field is enough to send **'bulkMails'** as you want.  
 
 ## Template
 
@@ -34,8 +42,15 @@ Shanu |Bharadwaj | SDE | abc@iitg.ernet.in
 To: Email (here, put the title of email column)  
 Subject: SOmething common to everyone.
 Body:
-Hello {{First name}} {{Last name}}  
-{{Designation}}  
+Hi {{name}} some content will be entered
+........................................
+...........
+     {{link1}}
+     ..........
+     {{link2}} 
+ regards
+ abc,
+ cdef
 <Body>
 ```  
 
